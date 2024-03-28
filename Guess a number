@@ -1,0 +1,48 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+
+import java.util.Scanner;
+import java.util.Random;
+public class Main
+{
+	public static void main(String[] args) {
+	     Scanner reader=new Scanner(System.in);
+  String play="Yes";
+
+    while(play.equals("Yes"))
+      {
+        Random rand=new Random();
+        int randNum=rand.nextInt(100);
+        int guess=-1;
+        int tries=0;
+      while(guess!=randNum)
+        {
+          System.out.println("Guess a number between 1 and 100");
+          guess=reader.nextInt();
+          tries++;
+          if(guess==randNum)
+          {
+            System.out.println("Awesome");
+             System.out.println("You took"+tries+"tries");
+             System.out.println("play again?");
+            play=reader.next().toLowerCase() ;
+            
+          }
+          else if(guess>randNum)
+          {
+             System.out.println("to high");
+          }
+          else
+          {
+             System.out.println("to low");
+          }
+        }
+      }
+    reader.close();
+	}
+}
